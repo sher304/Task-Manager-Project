@@ -15,6 +15,7 @@
 		604A397B294A1165009F5175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604A397A294A1165009F5175 /* Assets.xcassets */; };
 		604A397E294A1165009F5175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 604A397C294A1165009F5175 /* LaunchScreen.storyboard */; };
 		604A3989294A14F2009F5175 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A3988294A14F2009F5175 /* Dynamic.swift */; };
+		60BB326E294A1B1D00D7F597 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BB326D294A1B1D00D7F597 /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		604A397D294A1165009F5175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		604A397F294A1165009F5175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		604A3988294A14F2009F5175 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		60BB326D294A1B1D00D7F597 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		8AC1748B0CC87E34AD31F772 /* Pods_task_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_task_manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC5E75543C3B2897DABA01B /* Pods-task-manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-task-manager.debug.xcconfig"; path = "Target Support Files/Pods-task-manager/Pods-task-manager.debug.xcconfig"; sourceTree = "<group>"; };
 		C22BE1AAB3E4C89E3E4108CD /* Pods-task-manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-task-manager.release.xcconfig"; path = "Target Support Files/Pods-task-manager/Pods-task-manager.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		604A3986294A14E2009F5175 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				60BB326D294A1B1D00D7F597 /* TaskModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,7 +118,6 @@
 				AEC5E75543C3B2897DABA01B /* Pods-task-manager.debug.xcconfig */,
 				C22BE1AAB3E4C89E3E4108CD /* Pods-task-manager.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -236,6 +238,7 @@
 			files = (
 				604A3976294A1165009F5175 /* ViewController.swift in Sources */,
 				604A3989294A14F2009F5175 /* Dynamic.swift in Sources */,
+				60BB326E294A1B1D00D7F597 /* TaskModel.swift in Sources */,
 				604A3972294A1165009F5175 /* AppDelegate.swift in Sources */,
 				604A3974294A1165009F5175 /* SceneDelegate.swift in Sources */,
 			);
