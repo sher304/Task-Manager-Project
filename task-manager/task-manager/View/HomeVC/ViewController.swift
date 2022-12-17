@@ -16,11 +16,21 @@ class HomeViewController: UIViewController {
         label.font = .systemFont(ofSize: 24, weight: .semibold)
         return label
     }()
-
+    
+    private lazy var backgroundColorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .orange
+        view.layer.cornerRadius = 33
+        return view
+    }()
+    
     private lazy var taskTableView: UITableView = {
         let table = UITableView()
+        table.register(CustomTaskCell.self, forCellReuseIdentifier: CustomTaskCell.identifier)
+        table.showsVerticalScrollIndicator = false
         table.delegate = self
         table.dataSource = self
+        table.backgroundColor = backgroundColorView.backgroundColor
         return table
     }()
     
@@ -28,19 +38,28 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupConstraints()
     }
-
+    
     private func setupConstraints(){
         view.backgroundColor = .white
-        view.addSubview(applicationTitle)
+        
+        view.addSubview(backgroundColorView)
+        backgroundColorView.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+            make.height.equalTo(320)
+        }
+        
+        backgroundColorView.addSubview(applicationTitle)
         applicationTitle.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(15)
+            make.top.equalTo(backgroundColorView.safeAreaLayoutGuide.snp.top).offset(30)
         }
         
         view.addSubview(taskTableView)
         taskTableView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(applicationTitle.snp.bottom).offset(70)
+            make.bottom.equalToSuperview()
+            make.top.equalTo(applicationTitle.snp.bottom).offset(30)
+            make.leading.equalTo(30)
+            make.trailing.equalTo(-30)
         }
     }
 }
@@ -52,8 +71,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        
+        let cell = CustomTaskCell()
+        cell.layer.cornerRadius = 14
+        cell.layer.masksToBounds = true
         return cell
     }
     
